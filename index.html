@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .main1{
+        width: 80px;
+                height: 50px;
+                border-top: 15px;
+                shape-margin: 5px;
+                box-shadow: 6px 6px 6px rgb(228, 41, 41);
+                background-color: bisque;
+                border-radius: 25px;
+                padding-top: 1px;
+                margin: 20px 15px 20px 15px;
+                float: left;
+    }
+    .main2{
+        width: 80px;
+                height: 50px;
+                border-top: 15px;
+                shape-margin: 5px;
+                box-shadow: 6px 6px 6px rgb(228, 41, 41);
+                background-color: bisque;
+                border-radius: 25px;
+                padding-top: 1px;
+                margin: 20px 15px 20px 15px;
+                float: left;
+    }
+    .main3{
+        width: 80px;
+                height: 50px;
+                border-top: 15px;
+                shape-margin: 5px;
+                box-shadow: 6px 6px 6px rgb(228, 41, 41);
+                background-color: bisque;
+                border-radius: 25px;
+                padding-top: 1px;
+                margin: 20px 15px 20px 15px;
+                float: left;
+    }
+    .main4{
+        width: 80px;
+                height: 50px;
+                border-top: 15px;
+                shape-margin: 5px;  
+                box-shadow: 6px 6px 6px rgb(228, 41, 41);
+                background-color: bisque;
+                border-radius: 25px;
+                padding-top: 1px;
+                margin: 20px 15px 20px 15px;
+                float: left;
+    }
+    .main5{
+        margin-left: 65px;
+    }
+    .wen1{text-align:center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif}
+    .wen2{text-align: left;
+            font-style: italic;
+            color:aqua;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+    #shuru{
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            border: solid;
+            box-shadow: 10px 5px 5px;
+            box-shadow:brown;
+        }
+    .tou{
+        width: 399px;
+        height: 399px;
+        background-image: url(touxiang.jpg);
+        border-radius: 50%;
+        margin: auto;
+        cursor: pointer;
+    }
+    .wechat{
+        width: 399px;
+        height: 399px;
+        background-image: url(wechat.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        display: none;}
+    .tou:hover .wechat{
+        display: block;
+    }
+    .link{
+        text-decoration: none; 
+        color: black;
+    }
+
+</style>
+</head>
+<body>
+ <div style="text-align: center;
+        background-image: url(bei.jpg);">
+    <div id="num1" style="text-align: center;">
+        <div class="tou">
+   
+   
+        <div class="wechat">
+
+        </div>
+     
+       </div>
+    <h2 id="num2">这是我的个人小站</h2>
+    </div>
+    <div style="text-align: center;
+    width: 440px;
+    height: 600px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    ">
+    <div class="main1"> 
+        <p class="wen1"
+            ><a class="link" href="../练习/kaishi.html">开始</a></p>
+    </div>
+    
+    <div class="main2" 
+        > 
+        <p class="wen1"><a class="link" href="../练习/lianqi.html">练气</a></p>
+    </div>
+    
+    <div class="main3"> 
+        <p class="wen1"><a class="link" href="../练习/zhuji.html">筑基</a></p>
+    </div>
+    
+    <div class="main4"> 
+        <p class="wen1"><a class="link" href="../练习/jiedan.html">结丹</a></p>
+    </div>
+    <div class="main4"> 
+        <p class="wen1"><a class="link" href="../练习/yuanyin.html">元婴</a></p>
+    </div>
+    <div class="main4"> 
+        <p class="wen1"><a class="link" href="../练习/heti.html">合体</a></p>
+    </div>
+    <div class="main4"> 
+        <p class="wen1"><a class="link" href="../练习/dacheng.html">大乘</a></p>
+    </div>
+    <div class="main4"> 
+        <p class="wen1">飞升</p>
+    </div>
+    <div class="main5">
+        <p class="wen2">欢迎你来我的个人小站</p>
+        <p class="wen2">我可能会有空写一点东西</p>
+        <p class="wen2">也可能不写</p>
+    </div>
+    
+    
+
+    </div>
+</div>
+<div id="shuru">
+    <form name="f" onsubmit="check(this)">
+    用户名：<input id="username" type="text" name="username"><br>
+    密&ensp;&ensp;码：<input id="password" type="password" name="pwd"><br>
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <input  id="submit" type="submit" value="登录">
+   </form>
+</div>
+
+
+
+<script>
+function check(thisform) {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (username === "610986806" && password === "608689016" || username === "18993491731" && password ==="13719439981"){
+    alert("登录成功！");
+    window.document.f.action = "feisheng.html";
+    window.document.f.submit();
+}
+
+    else {
+        alert("禁止进入！");
+    }
+}
+</script>
+
+</body>
+</html>
