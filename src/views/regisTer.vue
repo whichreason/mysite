@@ -1,16 +1,15 @@
 <template>
 <div class="box">
-  <h2>用户登录</h2>
+  <h2>用户注册</h2>
 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-  <el-form-item label="用户名" prop="name">
-    <el-input v-model="ruleForm.name"></el-input>
+  <el-form-item label="用户名" prop="username">
+    <el-input v-model="ruleForm.username"></el-input>
   </el-form-item>
   <el-form-item label="密码" prop="password">
     <el-input v-model="ruleForm.password"></el-input>
   </el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+    <el-button type="primary" @click="submitForm('ruleForm')">立即注册</el-button>
     <el-button @click="resetForm('ruleForm')">重置</el-button>
-    <el-button @click="zhuce">去注册</el-button>
 
 </el-form>
 </div>
@@ -21,7 +20,7 @@ export default {
   data () {
     return {
       ruleForm: {
-        name: '',
+        username: '',
         password: '',
         region: '',
         date1: '',
@@ -32,35 +31,34 @@ export default {
         desc: ''
       },
       rules: {
-        name: [
+        username: [
           { required: true, message: '请输入用户名称', trigger: 'blur' },
           { min: 3, max: 9, message: '长度在 3 到 5 个字符', trigger: 'blur' }
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 3, max: 9, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { min: 3, max: 9, message: '长度在 3 到 6 个字符', trigger: 'blur' }
         ]
 
       }
+
     }
   },
   methods: {
     submitForm (formName) {
       this.$refs[formName].validate(async (valid) => {
         if (valid) {
-          const res = await this.$axios({
-            url: 'http://interview-api-t.itheima.net/h5/user/login',
+          await this.$axios({
+            url: 'http://interview-api-t.itheima.net/h5/user/register',
             method: 'POST',
             data: {
-              username: this.ruleForm.name,
+              username: this.ruleForm.username,
               password: this.ruleForm.password
             }
           })
-          console.log(res)
-          localStorage.setItem('h5-pc', 'Bearer ' + res.data.data.token)
-          this.$router.push({ path: '/' })
+          this.$router.push({ path: '/login' })
           this.$message({
-            message: '恭喜你已经登录',
+            message: '恭喜你注册成功，现在登陆试试',
             type: 'success'
           })
         } else {
@@ -71,9 +69,6 @@ export default {
     },
     resetForm (formName) {
       this.$refs[formName].resetFields()
-    },
-    zhuce () {
-      this.$router.push({ path: '/register' })
     }
   }
 }
@@ -89,6 +84,6 @@ export default {
   align-content: center;
   text-align: center;
   flex-direction: column;
-  background-color: bisque;
+  background-image: url(2.jpg);
 }
 </style>

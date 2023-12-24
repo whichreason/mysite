@@ -1,16 +1,14 @@
 <template>
 <div id='app'>
-    <loginOne></loginOne>
+
+<router-view></router-view>
 </div>
 </template>
 
 <script>
-import loginOne from './views/login-one.vue'
 
 export default {
-  components: {
-    loginOne
-  }
+
 }
 </script>
 
